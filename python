@@ -1,0 +1,38 @@
+python
+import time
+import sys
+import os
+
+# ANSI escape codes for green-on-black
+GREEN = "\033[92m"
+RESET = "\033[0m"
+
+log_entries = [
+    "[00:00:00] SYSTEM detects critical collapse of primary vessel: SUNG_JINWOO",
+    "[00:00:03] Emergency trigger passed through Monarch Validation Layer.",
+    "[00:00:05] Architect opens discussion node with ASHBORN (soul archive).",
+    "[00:01:44] Candidate JIN_AH retrieved and scanned.",
+    "[00:02:17] Risk assessments auto-resolved by Ashborn Override Key.",
+    "[00:02:44] Candidate loaded with modified inheritance system.",
+    "[00:03:11] Awakening protocol embedded: Passive Mode.",
+    "",
+    ">> End Log.",
+]
+
+def print_animated(text, delay=0.04):
+    for char in text:
+        sys.stdout.write(GREEN + char + RESET)
+        sys.stdout.flush()
+        time.sleep(delay)
+    print()
+
+def run_log_animation():
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(GREEN + ">> Begin Log: [Fallback Protocol Execution – Timestamp: T+000001]\n" + RESET)
+    time.sleep(1)
+    for entry in log_entries:
+        print_animated(entry)
+        time.sleep(0.8)
+
+if __name__ == "__main__":
+    run_log_animation()
